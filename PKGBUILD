@@ -11,7 +11,7 @@ arch=('arm' 'armv6h' 'armv7h')
 url="http://www.libretro.com"
 license=('GPL')
 groups=('libretro')
-depends=('raspberrypi-firmware' 'libusb' 'sdl2')
+depends=('raspberrypi-firmware' 'libusb')
 makedepends=('git')
 provides=('retroarch' 'retroarch-git')
 optdepends=('libretro-desmume: Nintendo DS core'
@@ -49,9 +49,7 @@ build() {
 
   ./configure --prefix=/usr \
     --enable-neon --enable-dispmanx --enable-floathard --enable-udev \
-    --enable-kms \
-    --disable-ffmpeg --disable-cg --disable-jack --disable-oss --disable-sdl \
-    --disable-pulse --disable-al --disable-wayland
+    --disable-ffmpeg --disable-cg --disable-jack --disable-oss --disable-sdl
   make
 }
 
